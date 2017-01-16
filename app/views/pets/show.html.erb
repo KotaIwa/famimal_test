@@ -1,0 +1,87 @@
+<div class="h5">
+<h1><%= @pet.breed %>の子犬詳細　子犬ID：<%= @pet.id %></h1>
+</div>
+
+  <% if (current_user.id == @pet.user.id) && (current_user.seller_or_buyer == 1) %>
+    <div class="profile_edit">
+      <%= link_to "子犬の情報編集", edit_pet_path(@pet.id), {:class => "btn btn-primary withripple" }%>
+    </div>
+  <% end %>
+
+<div style="text-align:center;padding-top:10px;">
+<div id="detailInq">
+
+<p>
+<a href='https://www.min-breeder.com/dogInquiry.php?dog_id=1610-01361' class="detail_inq_btn dog_inq">この子犬の見学/購入希望・お問い合わせ（無料）</a>
+</p>
+
+</div>
+</div>
+
+<div class="dog_list">
+<div style="float:left">子犬ID ： <%= @pet.id %></div>
+<div style="float:right">掲載日：●</div>
+<div class="clearfix"></div>
+
+
+<table style="width:100%; margin:6px 0px 0px 0px;">
+<tr>
+<th>犬種<br><img src="https://d2vg66dbzxkile.cloudfront.net/images/dummy.gif" width="103" height="1"></th>
+<td colspan="3" style="width:576px;">
+<%= @pet.breed %>
+
+
+</td>
+</tr>
+<tr>
+<th>性別</th>
+<td style="width:240px; border-right:none;">●<br></td>
+<th>誕生日<br><img src="https://d2vg66dbzxkile.cloudfront.net/images/dummy.gif" width="96" height="1"></th>
+<td style="width:240px;">
+<%= @pet.birth_day %>（今日で生後<b>●</b>日）<br>
+
+</td>
+</tr>
+<tr>
+<th>地域</th>
+<td style="width:240px; border-right:none; vertical-align:middle;">●<br /></td>
+<th>毛色</th>
+<td style="width:240px;">●<br /></td>
+</tr>
+<tr>
+<th>価格</th>
+<td style="width:240px; border-right:none;"><font style="font-weight:bold;" color="red"><%= @pet.price %></font> 円（税込）</td>
+<th>状況</th>
+<td style="width:240px;">
+販売中
+<br />
+</td>
+</tr>
+<tr>
+<th>アピールポイント</th>
+<td colspan="3" style="width:576px;">●<br /></td>
+</tr>
+
+
+</table>
+
+
+
+
+
+<div>
+<img src='<%= @pet.image_url %>' border='0' class='property_img' style="max-height:728px; width:auto;">
+</div>
+
+<div id="detail_img_comment" style="margin-top:8px;">●（コメント）</div>
+</div>
+
+
+<br clear="both">
+
+<div class="dog_comment_title">
+ブリーダーからの子犬紹介文
+</div>
+<div class="dog_comment">●<br />
+<br />
+</div>

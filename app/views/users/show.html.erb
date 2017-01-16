@@ -1,0 +1,10 @@
+<%= @user.nickname %>さんのユーザーページです。
+
+  <% if current_user.id == @user.id %>
+    <div class="profile_edit">
+      <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }%>
+      <% if current_user.seller_or_buyer == 1 %>
+      <%= link_to "子犬を掲載する", new_pet_path, :class => "btn btn-primary withripple" %>
+      <% end %>
+    </div>
+  <% end %>

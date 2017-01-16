@@ -1,0 +1,18 @@
+<div class="row form">
+  <div class="col-lg-12">
+    <%= form_for(@pet) do |f| %>
+      <h2></h2>
+      <div class="form-group">
+        <div class="col-lg-6">
+          <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
+          <%= f.text_field :breed, placeholder: "犬種", class: "form-control" %>
+          <%= f.text_field :birth_day, placeholder: "誕生日（xxxx/xx/xx）", class: "form-control" %>
+          <%= f.text_field :image_url, placeholder: "画像", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "送信", class: "btn btn-primary withripple" %>
+      </div>
+    <% end %>
+  </div>
+</div>

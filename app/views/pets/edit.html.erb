@@ -1,0 +1,23 @@
+<div class="row form">
+  <div class="col-lg-12">
+    <%= form_for (@pet) do |f| %>
+      <h2>登録情報の編集</h2>
+      <div class="form-group">
+        <div class="col-lg-6">
+          <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
+          <%= f.text_field :breed, placeholder: "犬種", class: "form-control" %>
+          <%= f.text_field :image_url, placeholder: "画像", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "送信", class: "btn btn-primary withripple" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<h2>この子犬情報を掲載から削除する</h2>
+
+<div class="profile_edit">
+  <%= link_to "削除する", "/pets/#{@pet.id}", {:method => :delete, :class => "btn btn-primary withripple" } %>
+</div>
